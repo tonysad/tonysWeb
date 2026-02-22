@@ -1306,7 +1306,8 @@
         }
     </style>
 </head>
-<body class="light-mode">
+<!-- Changed from light-mode to dark-mode for default dark theme -->
+<body class="dark-mode">
     <!-- Navigation - Now with links on the RIGHT side -->
     <nav>
         <div class="nav-links">
@@ -1316,7 +1317,8 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
-        <div class="theme-toggle" id="themeToggle">🌙</div>
+        <!-- Changed toggle icon from moon to sun since starting in dark mode -->
+        <div class="theme-toggle" id="themeToggle">☀️</div>
     </nav>
 
     <!-- Modal for displaying images -->
@@ -1539,7 +1541,8 @@
                 localStorage.setItem('theme', theme);
             }
             
-            const savedTheme = localStorage.getItem('theme') || 'light';
+            // Changed default theme from 'light' to 'dark'
+            const savedTheme = localStorage.getItem('theme') || 'dark';
             setTheme(savedTheme);
             
             toggle.addEventListener('click', () => {
