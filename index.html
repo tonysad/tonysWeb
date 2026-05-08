@@ -365,7 +365,7 @@
             font-size: 0.95rem;
         }
 
-        /* Projects Section - FIXED: images now fit perfectly */
+        /* Projects Section */
         #projects {
             background: transparent;
         }
@@ -403,7 +403,6 @@
             border-color: var(--accent-1);
         }
 
-        /* Fixed image container - clickable */
         .project-img {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -520,7 +519,7 @@
             background: var(--accent-3);
         }
 
-        /* Skills Section - Mobile First - IMPROVED GRID */
+        /* Skills Section */
         #skills {
             background: transparent;
         }
@@ -573,7 +572,7 @@
             font-size: 0.8rem;
         }
 
-        /* Contact Section - Mobile First */
+        /* Contact Section - New Layout: Contact Info Cards */
         #contact {
             background: transparent;
         }
@@ -597,77 +596,83 @@
         .contact-card h2 {
             font-size: 2rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .contact-form {
-            width: 100%;
+        /* Contact Info Grid - replacing the form */
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-            color: var(--accent-2);
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: var(--border);
-            border-radius: 10px;
+        .contact-info-item {
             background: var(--bg-secondary);
-            color: var(--text-primary);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
             transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-1);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 0.9rem;
-            background: var(--accent-1);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
+            border: var(--border);
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px var(--accent-1);
+        .contact-info-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-1);
+            box-shadow: var(--glow);
+            background: var(--card-bg);
+        }
+
+        .contact-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .contact-info-item h3 {
+            font-size: 1.4rem;
+            color: var(--accent-2);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .contact-detail {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            word-break: break-all;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-detail.small {
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+        .copy-feedback {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            color: var(--accent-1);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-weight: 500;
+        }
+
+        .contact-info-item:hover .copy-feedback {
+            opacity: 1;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: var(--border);
             flex-wrap: wrap;
         }
@@ -722,48 +727,47 @@
             nav {
                 padding: 1.2rem 2rem;
             }
-
             .nav-links {
                 gap: 2rem;
             }
-
             .nav-links a {
                 font-size: 1rem;
             }
-
             .container {
                 padding: 0 2rem;
             }
-
             .hero-left h1 {
                 font-size: 2.5rem;
             }
-
             .hero-left .name {
                 font-size: 3rem;
             }
-
             .hero-left .title {
                 font-size: 1.8rem;
             }
-
             .profile-img {
                 height: 350px;
             }
-
             .skills-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
             }
-
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .about-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
+            }
+            .contact-info-grid {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+            }
+            .contact-info-item {
+                flex: 1;
+                max-width: 320px;
             }
         }
 
@@ -772,59 +776,41 @@
             nav {
                 padding: 1.5rem 4rem;
             }
-
             .container {
                 padding: 0 4rem;
             }
-
             .hero {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 4rem;
                 text-align: left;
             }
-
             .hero-left p {
                 margin-left: 0;
             }
-
             .btn-group {
                 justify-content: flex-start;
             }
-
             .profile-card {
                 transform: translate(20px, 20px);
                 max-width: 500px;
             }
-
             .profile-card:hover {
                 transform: translate(20px, 20px) translateY(-15px) scale(1.02);
             }
-
             .profile-img {
                 height: 450px;
             }
-
             .skills-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 2rem;
             }
-
             .projects-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
             }
-
             .skill-icon {
                 font-size: 3rem;
-            }
-
-            .skill-name {
-                font-size: 1.2rem;
-            }
-
-            .skill-level {
-                font-size: 0.9rem;
             }
         }
 
@@ -835,7 +821,7 @@
             }
         }
 
-        /* ========== PREMIUM APPLE-STYLE SCROLL ANIMATIONS ========== */
+        /* Scroll Animations */
         .animate-item {
             opacity: 0;
             transform: translateY(80px) scale(0.96);
@@ -852,463 +838,64 @@
             filter: blur(0);
         }
 
-        /* Stagger children with delay */
         .stagger-container .animate-item {
             transition-delay: calc(0.12s * var(--item-index, 0));
         }
 
-        /* Reverse animation when leaving viewport */
-        .animate-item.animated.reversing {
-            opacity: 0;
-            transform: translateY(80px) scale(0.96);
-            filter: blur(8px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Ensure smooth performance on mobile */
-        @media (prefers-reduced-motion: reduce) {
-            .animate-item {
-                transition: none !important;
-                opacity: 1 !important;
-                transform: none !important;
-                filter: none !important;
-            }
-        }
-
-        /* ========== MOBILE RESPONSIVE FIXES ========== */
-        /* These styles enhance mobile experience without breaking existing structure */
-
-        /* Small Mobile Devices (up to 480px) */
+        /* Mobile Responsive Fixes */
         @media screen and (max-width: 480px) {
-            /* Navigation */
             nav {
                 padding: 0.6rem 1rem;
             }
-
             .nav-links {
                 gap: 0.5rem;
             }
-
             .nav-links a {
                 font-size: 0.75rem;
-                padding: 0.2rem 0;
             }
-
             .theme-toggle {
                 width: 32px;
                 height: 32px;
-                min-width: 32px;
                 font-size: 1rem;
             }
-
-            /* Container */
-            .container {
-                padding: 0 0.8rem;
-            }
-
-            /* Sections */
-            section {
-                padding: 70px 0 30px;
-            }
-
-            /* Home Section */
-            .hero {
-                gap: 1.5rem;
-            }
-
-            .hero-left h1 {
-                font-size: 1.6rem;
-            }
-
-            .hero-left .name {
-                font-size: 1.8rem;
-            }
-
-            .hero-left .title {
-                font-size: 1.1rem;
-            }
-
-            .hero-left p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-
-            /* Buttons */
-            .btn-group {
-                gap: 0.5rem;
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 0.7rem;
-                font-size: 0.85rem;
-                text-align: center;
-            }
-
-            /* Profile Card */
-            .profile-card {
-                padding: 1rem;
-                transform: translate(5px, 5px);
-            }
-
-            .profile-card:hover {
-                transform: translate(5px, 5px) translateY(-5px) scale(1.01);
-            }
-
             .profile-img {
                 height: 220px;
             }
-
-            /* About Section */
-            .about-content {
-                padding: 1rem;
-            }
-
-            .about-content h2 {
-                font-size: 1.6rem;
-                margin-bottom: 1rem;
-            }
-
-            .about-grid {
-                gap: 1rem;
-            }
-
-            .about-text p {
-                font-size: 0.9rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .info-item {
-                padding: 0.8rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .info-item h3 {
-                font-size: 1.1rem;
-            }
-
-            .info-item p {
-                font-size: 0.85rem;
-            }
-
-            /* Projects Section */
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .projects-grid {
-                gap: 1rem;
-            }
-
-            .project-card {
-                border-radius: 12px;
-            }
-
-            .project-content {
-                padding: 0.8rem;
-            }
-
-            .project-content h3 {
-                font-size: 1.1rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .project-content p {
-                font-size: 0.85rem;
-                margin-bottom: 0.8rem;
-                line-height: 1.4;
-            }
-
-            .project-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-                width: 100%;
-                text-align: center;
-            }
-
-            /* Skills Section */
             .skills-grid {
                 gap: 0.6rem;
             }
-
             .skill-card {
                 padding: 1rem 0.5rem;
-                border-radius: 12px;
             }
-
-            .skill-icon {
-                font-size: 1.8rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .skill-name {
-                font-size: 0.85rem;
-            }
-
-            .skill-level {
-                font-size: 0.7rem;
-            }
-
-            /* Contact Section */
-            .contact-card {
+            .contact-info-item {
                 padding: 1rem;
             }
-
-            .contact-card h2 {
-                font-size: 1.6rem;
-                margin-bottom: 1rem;
-            }
-
-            .form-group {
-                margin-bottom: 0.8rem;
-            }
-
-            .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 0.2rem;
-            }
-
-            .form-group input,
-            .form-group textarea {
-                padding: 0.6rem;
+            .contact-detail {
                 font-size: 0.9rem;
             }
-
-            .form-group textarea {
-                min-height: 100px;
-            }
-
-            .submit-btn {
-                padding: 0.7rem;
-                font-size: 0.9rem;
-            }
-
-            .social-links {
-                gap: 1rem;
-                margin-top: 1rem;
-                padding-top: 1rem;
-            }
-
-            .social-link {
-                font-size: 1.5rem;
-            }
-
-            /* Scroll to top */
-            .scroll-top {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-                bottom: 15px;
-                right: 15px;
-            }
-
-            /* Modal */
-            .modal-close {
-                width: 35px;
-                height: 35px;
-                font-size: 30px;
-                top: 15px;
-                right: 15px;
-            }
-
-            .modal-content {
-                max-width: 95%;
-                max-height: 95%;
-            }
-        }
-
-        /* Medium Mobile Devices (481px to 640px) */
-        @media screen and (min-width: 481px) and (max-width: 640px) {
-            /* Navigation */
-            nav {
-                padding: 0.8rem 1.2rem;
-            }
-
-            .nav-links a {
-                font-size: 0.8rem;
-            }
-
-            /* Home Section */
-            .hero-left h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-left .name {
-                font-size: 2rem;
-            }
-
-            .hero-left .title {
-                font-size: 1.2rem;
-            }
-
-            .profile-img {
-                height: 260px;
-            }
-
-            /* Buttons - Keep side by side if space allows */
-            .btn-group {
-                flex-direction: row;
-            }
-
-            .btn {
-                width: auto;
-                flex: 1;
-            }
-
-            /* Skills Grid */
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-
-            .skill-card {
-                padding: 1.2rem 0.8rem;
-            }
-
-            .skill-icon {
+            .contact-icon {
                 font-size: 2rem;
             }
         }
 
-        /* Large Mobile / Small Tablet (641px to 767px) */
-        @media screen and (min-width: 641px) and (max-width: 767px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1.2rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .hero-left h1 {
-                font-size: 2rem;
-            }
-
-            .hero-left .name {
-                font-size: 2.2rem;
-            }
-
-            .profile-img {
-                height: 300px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Fix for very small devices (up to 360px) */
         @media screen and (max-width: 360px) {
-            .nav-links a {
-                font-size: 0.7rem;
-            }
-
-            .hero-left h1 {
-                font-size: 1.4rem;
-            }
-
-            .hero-left .name {
-                font-size: 1.6rem;
-            }
-
-            .hero-left .title {
-                font-size: 1rem;
-            }
-
-            .profile-img {
-                height: 180px;
-            }
-
-            .about-content h2,
-            .section-title,
-            .contact-card h2 {
-                font-size: 1.4rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-card {
-                flex-direction: row;
-                text-align: left;
-                padding: 0.8rem;
-                gap: 1rem;
-            }
-
-            .skill-icon {
-                font-size: 1.5rem;
-                margin-bottom: 0;
-            }
-
-            .skill-info {
-                text-align: left;
+            .contact-detail {
+                font-size: 0.8rem;
+                word-break: break-all;
             }
         }
 
-        /* Landscape mode optimization */
-        @media screen and (max-height: 600px) and (orientation: landscape) {
-            section {
-                min-height: auto;
-                padding: 70px 0 30px;
-            }
-
-            .hero {
-                gap: 1rem;
-            }
-
-            .profile-img {
-                height: 180px;
-            }
-
-            .btn-group {
-                margin-bottom: 0;
-            }
-        }
-
-        /* Ensure no horizontal scrolling */
         body, html {
             overflow-x: hidden;
             width: 100%;
-            position: relative;
         }
-
-        /* Fix for iOS input zoom */
-        @media screen and (max-width: 768px) {
-            input, textarea, select {
-                font-size: 16px !important;
-            }
-        }
-
-        /* Ensure images are responsive */
         img {
             max-width: 100%;
             height: auto;
-            display: block;
-        }
-
-        /* Fix for flexbox gaps on older browsers */
-        .btn-group, .nav-links, .social-links {
-            gap: 0.5rem;
         }
     </style>
 </head>
-<!-- Changed from light-mode to dark-mode for default dark theme -->
-<body class="dark-mode">
-    <!-- Navigation - Now with links on the RIGHT side -->
+<body class="light-mode">
     <nav>
         <div class="nav-links">
             <a href="#home" class="active">Home</a>
@@ -1317,17 +904,14 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- Changed toggle icon from moon to sun since starting in dark mode -->
-        <div class="theme-toggle" id="themeToggle">☀️</div>
+        <div class="theme-toggle" id="themeToggle">🌙</div>
     </nav>
 
-    <!-- Modal for displaying images -->
     <div id="imageModal" class="modal">
         <span class="modal-close" id="modalClose">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- Home Section (hero already visible, no animate needed) -->
     <section id="home">
         <div class="container">
             <div class="hero">
@@ -1350,7 +934,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="about-content">
@@ -1380,37 +963,31 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title animate-item" data-animate>My Projects</h2>
             <div class="projects-grid stagger-container">
-                <!-- PROJECT 1 -->
                 <div class="project-card animate-item" data-animate style="--item-index: 1;">
                     <img src="project1.jpg" alt="RFID Entry and Exit System" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
                         <h3>RFID Entry and Exit System</h3>
-                        <p>A smart access control system that uses RFID technology to monitor and manage entry and exit logs. The system records user attendance in real-time, verifies authorized IDs, and stores data securely in a database with an admin dashboard for monitoring and reporting.</p>
+                        <p>A smart access control system that uses RFID technology to monitor and manage entry and exit logs. The system records user attendance in real-time, verifies authorized IDs, and stores data securely.</p>
                         <a href="#" class="project-btn">View Project</a>
                     </div>
                 </div>
-
-                <!-- PROJECT 2 -->
                 <div class="project-card animate-item" data-animate style="--item-index: 2;">
                     <img src="project2.jfif" alt="Rice E-Commerce Platform" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
-                       <h3>Rice E-Commerce Platform</h3>
-                        <p>A full-featured rice online marketplace that allows customers to browse different rice varieties, place orders, and track deliveries. The system includes user authentication, product management, cart functionality, and secure checkout integration with a database backend.</p>
+                        <h3>Rice E-Commerce Platform</h3>
+                        <p>A full-featured rice online marketplace that allows customers to browse different rice varieties, place orders, and track deliveries with secure checkout.</p>
                         <a href="#" class="project-btn">View Project</a>
                     </div>
                 </div>
-
-                <!-- PROJECT 3 -->
                 <div class="project-card animate-item" data-animate style="--item-index: 3;">
-                    <img src="project3.jpg" alt="Catbalogan Fish Price Tracker App" class="project-img" onclick="openModal(this)">
+                    <img src="project3.jpg" alt="Catbalogan Fish Price Tracker" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
-                        <h3>Catbalogan Fish Price Tracker App</h3>
-                        <p>A Flutter-based mobile application designed to monitor real-time fish prices exclusively in Catbalogan City markets. The system allows local vendors to update fish prices and availability, while buyers can compare daily rates, view price history, and receive market updates. The app includes user role management and database integration for accurate local market tracking.</p>
+                        <h3>Catbalogan Fish Price Tracker</h3>
+                        <p>A Flutter-based mobile app to monitor real-time fish prices in Catbalogan City markets, allowing vendors to update prices and buyers to compare rates.</p>
                         <a href="#" class="project-btn">View Project</a>
                     </div>
                 </div>
@@ -1418,97 +995,52 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title animate-item" data-animate>Technical Skills</h2>
             <div class="skills-grid stagger-container">
-                <!-- Frontend Skills -->
-                <div class="skill-card animate-item" data-animate style="--item-index: 1;">
-                    <div class="skill-icon">🌐</div>
-                    <div class="skill-name">HTML5</div>
-                    <div class="skill-level">Advanced</div>
-                </div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 2;">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-name">CSS3</div>
-                    <div class="skill-level">Advanced</div>
-                </div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 3;">
-                    <div class="skill-icon">⚡</div>
-                    <div class="skill-name">JavaScript</div>
-                    <div class="skill-level">Advanced</div>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="skill-card animate-item" data-animate style="--item-index: 4;">
-                    <div class="skill-icon">🐘</div>
-                    <div class="skill-name">PHP</div>
-                    <div class="skill-level">Intermediate</div>
-                </div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 5;">
-                    <div class="skill-icon">🗄️</div>
-                    <div class="skill-name">MySQL</div>
-                    <div class="skill-level">Advanced</div>
-                </div>
-                
-                <!-- Programming Languages -->
-                <div class="skill-card animate-item" data-animate style="--item-index: 6;">
-                    <div class="skill-icon">⚙️</div>
-                    <div class="skill-name">C</div>
-                    <div class="skill-level">Intermediate</div>
-                </div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 7;">
-                    <div class="skill-icon">⚙️</div>
-                    <div class="skill-name">C++</div>
-                    <div class="skill-level">Intermediate</div>
-                </div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 8;">
-                    <div class="skill-icon">🔷</div>
-                    <div class="skill-name">C#</div>
-                    <div class="skill-level">Intermediate</div>
-                </div>
-                
-                <!-- Mobile/Other -->
-                <div class="skill-card animate-item" data-animate style="--item-index: 9;">
-                    <div class="skill-icon">📱</div>
-                    <div class="skill-name">Flutter</div>
-                    <div class="skill-level">Intermediate</div>
-                </div>
-              
+                <div class="skill-card animate-item" data-animate style="--item-index: 1;"><div class="skill-icon">🌐</div><div class="skill-name">HTML5</div><div class="skill-level">Advanced</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 2;"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div><div class="skill-level">Advanced</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 3;"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 4;"><div class="skill-icon">🐘</div><div class="skill-name">PHP</div><div class="skill-level">Intermediate</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 5;"><div class="skill-icon">🗄️</div><div class="skill-name">MySQL</div><div class="skill-level">Advanced</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 6;"><div class="skill-icon">⚙️</div><div class="skill-name">C</div><div class="skill-level">Intermediate</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 7;"><div class="skill-icon">⚙️</div><div class="skill-name">C++</div><div class="skill-level">Intermediate</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 8;"><div class="skill-icon">🔷</div><div class="skill-name">C#</div><div class="skill-level">Intermediate</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 9;"><div class="skill-icon">📱</div><div class="skill-name">Flutter</div><div class="skill-level">Intermediate</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - Updated: Gmail & Phone Number instead of message form -->
     <section id="contact">
         <div class="container">
             <div class="contact-card">
                 <h2 class="animate-item" data-animate>Get In Touch</h2>
                 
-                <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); alert('Message sent! Thank you for contacting me.'); this.reset();">
-                    <div class="form-group animate-item" data-animate>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                <div class="contact-info-grid">
+                    <!-- Email Card -->
+                    <div class="contact-info-item animate-item" data-animate onclick="copyToClipboard('ocenaranthony668@gmail.com', 'Email')">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <div class="contact-detail">ocenaranthony668@gmail.com</div>
+                        <div class="copy-feedback">📋 Click to copy</div>
                     </div>
-
-                    <div class="form-group animate-item" data-animate>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    
+                    <!-- Phone Card -->
+                    <div class="contact-info-item animate-item" data-animate onclick="copyToClipboard('09126291796', 'Phone')">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone / WhatsApp</h3>
+                        <div class="contact-detail small">+63 912 629 1796</div>
+                        <div class="contact-detail">0912 629 1796</div>
+                        <div class="copy-feedback">📋 Click to copy number</div>
                     </div>
-
-                    <div class="form-group animate-item" data-animate>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn animate-item" data-animate>Send Message</button>
-                </form>
+                </div>
 
                 <div class="social-links stagger-container">
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 1;">📧</a>
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 2;">💼</a>
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 3;">🐦</a>
+                    <a href="mailto:ocenaranthony668@gmail.com" class="social-link animate-item" data-animate style="--item-index: 1;" title="Send Email">📧</a>
+                    <a href="tel:+639126291796" class="social-link animate-item" data-animate style="--item-index: 2;" title="Call Me">📞</a>
+                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 3;">💼</a>
                     <a href="#" class="social-link animate-item" data-animate style="--item-index: 4;">📱</a>
                     <a href="#" class="social-link animate-item" data-animate style="--item-index: 5;">💻</a>
                 </div>
@@ -1516,7 +1048,6 @@
         </div>
     </section>
 
-    <!-- Scroll to top button -->
     <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
 
     <script>
@@ -1527,7 +1058,6 @@
             const navLinks = document.querySelectorAll('.nav-links a');
             const scrollTopBtn = document.getElementById('scrollTop');
             
-            // Theme toggle functionality
             function setTheme(theme) {
                 if (theme === 'dark') {
                     body.classList.add('dark-mode');
@@ -1541,8 +1071,7 @@
                 localStorage.setItem('theme', theme);
             }
             
-            // Changed default theme from 'light' to 'dark'
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const savedTheme = localStorage.getItem('theme') || 'light';
             setTheme(savedTheme);
             
             toggle.addEventListener('click', () => {
@@ -1550,131 +1079,89 @@
                 setTheme(newTheme);
             });
 
-            // Active navigation link on scroll
             window.addEventListener('scroll', () => {
                 let current = '';
-                
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
                     if (window.scrollY >= sectionTop - 150) {
                         current = section.getAttribute('id');
                     }
                 });
-
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${current}`) {
                         link.classList.add('active');
                     }
                 });
-
-                // Show/hide scroll to top button
-                if (window.scrollY > 500) {
-                    scrollTopBtn.classList.add('show');
-                } else {
-                    scrollTopBtn.classList.remove('show');
-                }
+                if (window.scrollY > 500) scrollTopBtn.classList.add('show');
+                else scrollTopBtn.classList.remove('show');
             });
 
-            // Smooth scroll for navigation links
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetSection = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetSection.offsetTop - 70, behavior: 'smooth' });
                 });
             });
-
-            // Trigger scroll event on page load to set active link
             window.dispatchEvent(new Event('scroll'));
 
-            // ========== PREMIUM APPLE-STYLE SCROLL ANIMATIONS ==========
+            // Intersection Observer for scroll animations
             const animateItems = document.querySelectorAll('[data-animate]');
-            
-            // Create intersection observer for enter and exit animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Element entered viewport - animate in
                         entry.target.classList.add('animated');
                         entry.target.classList.remove('reversing');
                     } else {
-                        // Element left viewport - animate out (reverse)
                         if (entry.target.classList.contains('animated')) {
                             entry.target.classList.add('reversing');
-                            // Remove classes after reverse animation completes
                             setTimeout(() => {
-                                if (!entry.isIntersecting) {
-                                    entry.target.classList.remove('animated', 'reversing');
-                                }
-                            }, 800); // Match reverse transition duration
+                                if (!entry.isIntersecting) entry.target.classList.remove('animated', 'reversing');
+                            }, 800);
                         }
                     }
                 });
-            }, {
-                threshold: 0.15, // Trigger when 15% of element is visible
-                rootMargin: '0px' // No margin for precise control
-            });
-
-            // Observe all animate items
+            }, { threshold: 0.15 });
             animateItems.forEach(item => observer.observe(item));
-
-            // Initial check for elements already in viewport
             setTimeout(() => {
                 animateItems.forEach(item => {
                     const rect = item.getBoundingClientRect();
-                    const isInViewport = rect.top < window.innerHeight - 100 && rect.bottom > 100;
-                    if (isInViewport) {
-                        item.classList.add('animated');
-                    }
+                    if (rect.top < window.innerHeight - 100 && rect.bottom > 100) item.classList.add('animated');
                 });
             }, 100);
-
-            // RAF optimization for smooth scrolling
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        // Force browser to optimize animations
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-
         })();
 
-        // Modal functionality for images
+        // Modal image viewer
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeBtn = document.getElementById('modalClose');
-
         window.openModal = function(imgElement) {
             modal.classList.add('show');
             modalImg.src = imgElement.src;
         }
+        closeBtn.onclick = () => modal.classList.remove('show');
+        modal.onclick = (event) => { if (event.target === modal) modal.classList.remove('show'); }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('show')) modal.classList.remove('show'); });
 
-        closeBtn.onclick = function() {
-            modal.classList.remove('show');
-        }
-
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                modal.classList.remove('show');
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                modal.classList.remove('show');
-            }
-        });
+        // Copy to clipboard functionality for contact cards
+        window.copyToClipboard = function(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Provide temporary visual feedback
+                const activeElement = window.event.currentTarget;
+                const feedback = activeElement.querySelector('.copy-feedback');
+                const originalText = feedback.innerText;
+                feedback.innerText = `✓ ${type} copied!`;
+                feedback.style.opacity = '1';
+                setTimeout(() => {
+                    feedback.innerText = originalText;
+                    feedback.style.opacity = '0';
+                }, 2000);
+            }).catch(() => {
+                alert('Unable to copy. Please select manually.');
+            });
+        };
     </script>
 </body>
 </html>
