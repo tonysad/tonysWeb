@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Anthony D. Ocenar - Fullstack Developer</title>
+    <title>Anthony D. Ocenar | Fullstack Developer</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -43,18 +45,18 @@
 
         /* Dark mode */
         .dark-mode {
-            --bg-primary: linear-gradient(135deg, #0b0f17, #0f172a, #111827, #1e1b4b);
-            --bg-secondary: #111827;
-            --text-primary: #ffffff;
-            --text-secondary: #d1d5db;
-            --accent-1: #6366f1;
-            --accent-2: #22c55e;
-            --accent-3: #8b5cf6;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent-1: #818cf8;
+            --accent-2: #4ade80;
+            --accent-3: #a78bfa;
             --nav-bg: rgba(15, 23, 42, 0.95);
             --card-bg: #1e293b;
-            --border: 1px solid rgba(99, 102, 241, 0.3);
+            --border: 1px solid rgba(129, 140, 248, 0.3);
             --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            --glow: 0 0 40px rgba(99, 102, 241, 0.5);
+            --glow: 0 0 40px rgba(129, 140, 248, 0.4);
             background: var(--bg-primary);
             color: var(--text-primary);
         }
@@ -63,7 +65,6 @@
             background: var(--bg-primary);
         }
 
-        /* Navigation - Mobile First */
         nav {
             position: fixed;
             top: 0;
@@ -120,7 +121,6 @@
             color: var(--accent-1);
         }
 
-        /* Theme Toggle */
         .theme-toggle {
             background: var(--card-bg);
             border: var(--border);
@@ -140,10 +140,9 @@
 
         .theme-toggle:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 40px var(--accent-1);
+            box-shadow: 0 0 20px var(--accent-1);
         }
 
-        /* Main Container - Mobile First */
         .container {
             width: 100%;
             max-width: 1400px;
@@ -151,7 +150,6 @@
             padding: 0 1rem;
         }
 
-        /* Sections base styling */
         section {
             min-height: 100vh;
             padding: 80px 0 40px;
@@ -160,7 +158,6 @@
             scroll-margin-top: 70px;
         }
 
-        /* Home Section - Mobile First */
         #home {
             background: transparent;
         }
@@ -207,7 +204,6 @@
             margin-right: auto;
         }
 
-        /* Buttons */
         .btn-group {
             display: flex;
             gap: 0.8rem;
@@ -225,6 +221,9 @@
             border: none;
             font-size: 0.9rem;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -250,7 +249,6 @@
             transform: translateY(-3px);
         }
 
-        /* Profile Card - Mobile First */
         .profile-card {
             background: var(--card-bg);
             border-radius: 30px;
@@ -296,7 +294,6 @@
             display: block;
         }
 
-        /* About Section - Mobile First */
         #about {
             background: transparent;
         }
@@ -355,19 +352,22 @@
 
         .info-item h3 {
             color: var(--accent-2);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item h3 i {
+            font-size: 1.2rem;
+            width: 1.5rem;
         }
 
         .info-item p {
             color: var(--text-secondary);
             line-height: 1.5;
             font-size: 0.95rem;
-        }
-
-        /* Projects Section */
-        #projects {
-            background: transparent;
         }
 
         .section-title {
@@ -439,8 +439,10 @@
         }
 
         .project-btn {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
             background: var(--accent-1);
             color: white;
             text-decoration: none;
@@ -453,12 +455,15 @@
             align-self: flex-start;
         }
 
+        .project-btn i {
+            font-size: 0.85rem;
+        }
+
         .project-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px var(--accent-1);
         }
 
-        /* Modal for image display */
         .modal {
             display: none;
             position: fixed;
@@ -499,8 +504,7 @@
             top: 25px;
             right: 35px;
             color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
+            font-size: 32px;
             cursor: pointer;
             transition: 0.3s;
             z-index: 2001;
@@ -511,17 +515,11 @@
             justify-content: center;
             background: var(--accent-1);
             border-radius: 50%;
-            box-shadow: var(--glow);
         }
 
         .modal-close:hover {
             transform: scale(1.1);
             background: var(--accent-3);
-        }
-
-        /* Skills Section */
-        #skills {
-            background: transparent;
         }
 
         .skills-grid {
@@ -552,12 +550,8 @@
 
         .skill-icon {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1) rotate(360deg);
+            margin-bottom: 0.8rem;
+            color: var(--accent-1);
         }
 
         .skill-name {
@@ -572,7 +566,26 @@
             font-size: 0.8rem;
         }
 
-        /* Contact Section - New Layout: Contact Info Cards */
+        .skill-progress {
+            width: 80%;
+            height: 4px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: var(--accent-1);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .skill-card:hover .skill-progress-bar {
+            background: var(--accent-2);
+        }
+
         #contact {
             background: transparent;
         }
@@ -603,7 +616,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Contact Info Grid - replacing the form */
         .contact-info-grid {
             display: flex;
             flex-direction: column;
@@ -631,27 +643,26 @@
         .contact-icon {
             font-size: 2.8rem;
             margin-bottom: 0.8rem;
-            display: inline-block;
+            color: var(--accent-1);
         }
 
         .contact-info-item h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--accent-2);
             margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
         .contact-detail {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-primary);
             font-weight: 500;
             word-break: break-all;
-            letter-spacing: 0.3px;
         }
 
         .contact-detail.small {
-            font-size: 1rem;
             font-family: monospace;
+            letter-spacing: 0.5px;
         }
 
         .copy-feedback {
@@ -670,9 +681,9 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
             border-top: var(--border);
             flex-wrap: wrap;
         }
@@ -680,16 +691,24 @@
         .social-link {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
             transition: all 0.3s ease;
         }
 
         .social-link:hover {
-            color: var(--accent-1);
-            transform: scale(1.2) translateY(-5px);
+            color: white;
+            background: var(--accent-1);
+            transform: translateY(-5px);
         }
 
-        /* Scroll to top button */
         .scroll-top {
             position: fixed;
             bottom: 20px;
@@ -707,7 +726,7 @@
             opacity: 0;
             visibility: hidden;
             border: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             box-shadow: var(--glow);
             z-index: 999;
         }
@@ -719,117 +738,87 @@
 
         .scroll-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px var(--accent-1);
         }
 
-        /* Tablet Styles */
+        /* Experience Timeline */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .exp-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            border-left: 3px solid var(--accent-1);
+            transition: all 0.3s ease;
+        }
+
+        .exp-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--accent-2);
+            box-shadow: var(--glow);
+        }
+
+        .exp-title {
+            font-weight: 700;
+            color: var(--accent-2);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-company {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
         @media (min-width: 768px) {
-            nav {
-                padding: 1.2rem 2rem;
-            }
-            .nav-links {
-                gap: 2rem;
-            }
-            .nav-links a {
-                font-size: 1rem;
-            }
-            .container {
-                padding: 0 2rem;
-            }
-            .hero-left h1 {
-                font-size: 2.5rem;
-            }
-            .hero-left .name {
-                font-size: 3rem;
-            }
-            .hero-left .title {
-                font-size: 1.8rem;
-            }
-            .profile-img {
-                height: 350px;
-            }
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .about-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-            .contact-info-grid {
-                flex-direction: row;
-                justify-content: center;
-                gap: 2rem;
-            }
-            .contact-info-item {
-                flex: 1;
-                max-width: 320px;
-            }
+            nav { padding: 1.2rem 2rem; }
+            .nav-links { gap: 2rem; }
+            .container { padding: 0 2rem; }
+            .hero-left h1 { font-size: 2.5rem; }
+            .hero-left .name { font-size: 3rem; }
+            .hero-left .title { font-size: 1.8rem; }
+            .profile-img { height: 350px; }
+            .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .contact-info-grid { flex-direction: row; justify-content: center; gap: 2rem; }
+            .contact-info-item { flex: 1; max-width: 320px; }
         }
 
-        /* Desktop Styles */
         @media (min-width: 1024px) {
-            nav {
-                padding: 1.5rem 4rem;
-            }
-            .container {
-                padding: 0 4rem;
-            }
-            .hero {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-                text-align: left;
-            }
-            .hero-left p {
-                margin-left: 0;
-            }
-            .btn-group {
-                justify-content: flex-start;
-            }
-            .profile-card {
-                transform: translate(20px, 20px);
-                max-width: 500px;
-            }
-            .profile-card:hover {
-                transform: translate(20px, 20px) translateY(-15px) scale(1.02);
-            }
-            .profile-img {
-                height: 450px;
-            }
-            .skills-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-            .projects-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-            .skill-icon {
-                font-size: 3rem;
-            }
+            nav { padding: 1.5rem 4rem; }
+            .container { padding: 0 4rem; }
+            .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; }
+            .hero-left p { margin-left: 0; }
+            .btn-group { justify-content: flex-start; }
+            .profile-card { transform: translate(20px, 20px); max-width: 500px; }
+            .profile-card:hover { transform: translate(20px, 20px) translateY(-15px) scale(1.02); }
+            .profile-img { height: 450px; }
+            .skills-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+            .projects-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         }
 
-        /* Large Desktop */
         @media (min-width: 1400px) {
-            .skills-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
+            .skills-grid { grid-template-columns: repeat(5, 1fr); }
         }
 
-        /* Scroll Animations */
         .animate-item {
             opacity: 0;
             transform: translateY(80px) scale(0.96);
             filter: blur(8px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
-                        filter 1s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity, filter;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .animate-item.animated {
@@ -838,61 +827,19 @@
             filter: blur(0);
         }
 
-        .stagger-container .animate-item {
-            transition-delay: calc(0.12s * var(--item-index, 0));
+        @media (max-width: 480px) {
+            nav { padding: 0.6rem 1rem; }
+            .nav-links a { font-size: 0.75rem; }
+            .profile-img { height: 220px; }
+            .skills-grid { gap: 0.8rem; }
+            .skill-card { padding: 1rem; }
+            .contact-info-item { padding: 1rem; }
+            .contact-icon { font-size: 2rem; }
+            .social-link { width: 40px; height: 40px; font-size: 1.3rem; }
         }
 
-        /* Mobile Responsive Fixes */
-        @media screen and (max-width: 480px) {
-            nav {
-                padding: 0.6rem 1rem;
-            }
-            .nav-links {
-                gap: 0.5rem;
-            }
-            .nav-links a {
-                font-size: 0.75rem;
-            }
-            .theme-toggle {
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-            .profile-img {
-                height: 220px;
-            }
-            .skills-grid {
-                gap: 0.6rem;
-            }
-            .skill-card {
-                padding: 1rem 0.5rem;
-            }
-            .contact-info-item {
-                padding: 1rem;
-            }
-            .contact-detail {
-                font-size: 0.9rem;
-            }
-            .contact-icon {
-                font-size: 2rem;
-            }
-        }
-
-        @media screen and (max-width: 360px) {
-            .contact-detail {
-                font-size: 0.8rem;
-                word-break: break-all;
-            }
-        }
-
-        body, html {
-            overflow-x: hidden;
-            width: 100%;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+        body, html { overflow-x: hidden; width: 100%; }
+        img { max-width: 100%; height: auto; }
     </style>
 </head>
 <body class="light-mode">
@@ -904,7 +851,9 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
-        <div class="theme-toggle" id="themeToggle">🌙</div>
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
     </nav>
 
     <div id="imageModal" class="modal">
@@ -919,10 +868,10 @@
                     <h1>Hello, I'm</h1>
                     <div class="name">Anthony D. Ocenar</div>
                     <div class="title">Fullstack Web Developer</div>
-                    <p>I'm a passionate IT student and fullstack developer from Samar State University with expertise in creating modern, responsive web applications. I specialize in turning complex problems into simple, elegant solutions.</p>
+                    <p>IT student and fullstack developer from Samar State University with expertise in modern, responsive web applications. I transform complex problems into elegant solutions.</p>
                     <div class="btn-group">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
                     </div>
                 </div>
                 <div class="hero-right">
@@ -940,22 +889,38 @@
                 <h2 class="animate-item" data-animate>About Me</h2>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="animate-item" data-animate>I'm Anthony D. Ocenar, a 4th-year Information Technology student at Samar State University with a burning passion for web development. Over the past 4 years, I've transformed my curiosity into expertise, building everything from simple landing pages to complex full-stack applications.</p>
-                        <p class="animate-item" data-animate>My journey began when I built my first HTML page in Ist year College – since then, I've never looked back. I specialize in creating responsive, user-friendly websites that not only look beautiful but also deliver exceptional performance.</p>
-                        <p class="animate-item" data-animate>When I'm not coding, you'll find me contributing to open-source projects, mentoring junior developers, or exploring the latest trends in AI and cloud computing.</p>
+                        <p class="animate-item" data-animate>I'm Anthony D. Ocenar, a 4th-year Information Technology student at Samar State University with a strong passion for web development. Over the past 4 years, I've built everything from landing pages to full-stack applications.</p>
+                        <p class="animate-item" data-animate>My journey started with my first HTML page in first year. I now specialize in responsive, user-friendly websites that deliver both aesthetics and performance.</p>
+                        <p class="animate-item" data-animate>Outside coding, I contribute to open-source projects and explore AI and cloud computing trends.</p>
                     </div>
                     <div class="about-info">
                         <div class="info-item animate-item" data-animate>
-                            <h3>🎓 Education</h3>
-                            <p>Bachelor of Science in Information Technology<br>Samar State University<br>2022-2026</p>
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <p>Bachelor of Science in Information Technology<br>Samar State University<br>2022 - 2026</p>
                         </div>
                         <div class="info-item animate-item" data-animate>
-                            <h3>💼 Experience</h3>
-                            <p>Web Developer Intern at TechCorp · Summer 2024<br>Freelance Developer · 2023 - Present (12+ projects)<br>Open Source Contributor · GitHub</p>
+                            <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                            <div class="experience-timeline">
+                                <div class="exp-item">
+                                    <div class="exp-title">Freelance Fullstack Developer</div>
+                                    <div class="exp-company">Self-employed · 2023 - Present</div>
+                                    <div class="exp-desc">Developed 12+ web applications for local businesses including e-commerce platforms, inventory systems, and landing pages.</div>
+                                </div>
+                                <div class="exp-item">
+                                    <div class="exp-title">Web Development Intern</div>
+                                    <div class="exp-company">TechCorp Solutions · Summer 2024</div>
+                                    <div class="exp-desc">Assisted in building internal dashboards, optimized database queries, and implemented responsive UI components.</div>
+                                </div>
+                                <div class="exp-item">
+                                    <div class="exp-title">Open Source Contributor</div>
+                                    <div class="exp-company">GitHub Community · 2024 - Present</div>
+                                    <div class="exp-desc">Contributed to documentation and bug fixes for open-source JavaScript libraries.</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="info-item animate-item" data-animate>
-                            <h3>🚀 Career Goals</h3>
-                            <p>Aspiring to become a lead full-stack developer, specializing in cloud-native applications and AI-powered web solutions.</p>
+                            <h3><i class="fas fa-rocket"></i> Career Goals</h3>
+                            <p>Aspiring lead full-stack developer specializing in cloud-native applications and AI-powered web solutions.</p>
                         </div>
                     </div>
                 </div>
@@ -971,24 +936,24 @@
                     <img src="project1.jpg" alt="RFID Entry and Exit System" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
                         <h3>RFID Entry and Exit System</h3>
-                        <p>A smart access control system that uses RFID technology to monitor and manage entry and exit logs. The system records user attendance in real-time, verifies authorized IDs, and stores data securely.</p>
-                        <a href="#" class="project-btn">View Project</a>
+                        <p>Smart access control system using RFID technology to monitor entry and exit logs, verify authorized IDs, and store data securely with real-time dashboards.</p>
+                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Project</a>
                     </div>
                 </div>
                 <div class="project-card animate-item" data-animate style="--item-index: 2;">
                     <img src="project2.jfif" alt="Rice E-Commerce Platform" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
                         <h3>Rice E-Commerce Platform</h3>
-                        <p>A full-featured rice online marketplace that allows customers to browse different rice varieties, place orders, and track deliveries with secure checkout.</p>
-                        <a href="#" class="project-btn">View Project</a>
+                        <p>Full-featured online marketplace for rice varieties. Includes user authentication, cart functionality, order tracking, and secure checkout.</p>
+                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Project</a>
                     </div>
                 </div>
                 <div class="project-card animate-item" data-animate style="--item-index: 3;">
                     <img src="project3.jpg" alt="Catbalogan Fish Price Tracker" class="project-img" onclick="openModal(this)">
                     <div class="project-content">
                         <h3>Catbalogan Fish Price Tracker</h3>
-                        <p>A Flutter-based mobile app to monitor real-time fish prices in Catbalogan City markets, allowing vendors to update prices and buyers to compare rates.</p>
-                        <a href="#" class="project-btn">View Project</a>
+                        <p>Flutter-based mobile app to monitor real-time fish prices in Catbalogan City markets. Vendors update prices, buyers compare rates.</p>
+                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Project</a>
                     </div>
                 </div>
             </div>
@@ -999,56 +964,52 @@
         <div class="container">
             <h2 class="section-title animate-item" data-animate>Technical Skills</h2>
             <div class="skills-grid stagger-container">
-                <div class="skill-card animate-item" data-animate style="--item-index: 1;"><div class="skill-icon">🌐</div><div class="skill-name">HTML5</div><div class="skill-level">Advanced</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 2;"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div><div class="skill-level">Advanced</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 3;"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 4;"><div class="skill-icon">🐘</div><div class="skill-name">PHP</div><div class="skill-level">Intermediate</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 5;"><div class="skill-icon">🗄️</div><div class="skill-name">MySQL</div><div class="skill-level">Advanced</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 6;"><div class="skill-icon">⚙️</div><div class="skill-name">C</div><div class="skill-level">Intermediate</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 7;"><div class="skill-icon">⚙️</div><div class="skill-name">C++</div><div class="skill-level">Intermediate</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 8;"><div class="skill-icon">🔷</div><div class="skill-name">C#</div><div class="skill-level">Intermediate</div></div>
-                <div class="skill-card animate-item" data-animate style="--item-index: 9;"><div class="skill-icon">📱</div><div class="skill-name">Flutter</div><div class="skill-level">Intermediate</div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 1;"><div class="skill-icon"><i class="fab fa-html5"></i></div><div class="skill-name">HTML5</div><div class="skill-level">Advanced</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 90%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 2;"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><div class="skill-name">CSS3</div><div class="skill-level">Advanced</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 85%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 3;"><div class="skill-icon"><i class="fab fa-js"></i></div><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 85%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 4;"><div class="skill-icon"><i class="fab fa-php"></i></div><div class="skill-name">PHP</div><div class="skill-level">Intermediate</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 70%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 5;"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-name">MySQL</div><div class="skill-level">Advanced</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 85%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 6;"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-name">C</div><div class="skill-level">Intermediate</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 65%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 7;"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-name">C++</div><div class="skill-level">Intermediate</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 65%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 8;"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-name">C#</div><div class="skill-level">Intermediate</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 60%"></div></div></div>
+                <div class="skill-card animate-item" data-animate style="--item-index: 9;"><div class="skill-icon"><i class="fab fa-flutter"></i></div><div class="skill-name">Flutter</div><div class="skill-level">Intermediate</div><div class="skill-progress"><div class="skill-progress-bar" style="width: 65%"></div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section - Updated: Gmail & Phone Number instead of message form -->
     <section id="contact">
         <div class="container">
             <div class="contact-card">
                 <h2 class="animate-item" data-animate>Get In Touch</h2>
-                
                 <div class="contact-info-grid">
-                    <!-- Email Card -->
                     <div class="contact-info-item animate-item" data-animate onclick="copyToClipboard('ocenaranthony668@gmail.com', 'Email')">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <h3>Email</h3>
                         <div class="contact-detail">ocenaranthony668@gmail.com</div>
-                        <div class="copy-feedback">📋 Click to copy</div>
+                        <div class="copy-feedback">Click to copy</div>
                     </div>
-                    
-                    <!-- Phone Card -->
                     <div class="contact-info-item animate-item" data-animate onclick="copyToClipboard('09126291796', 'Phone')">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                         <h3>Phone / WhatsApp</h3>
                         <div class="contact-detail small">+63 912 629 1796</div>
                         <div class="contact-detail">0912 629 1796</div>
-                        <div class="copy-feedback">📋 Click to copy number</div>
+                        <div class="copy-feedback">Click to copy number</div>
                     </div>
                 </div>
-
                 <div class="social-links stagger-container">
-                    <a href="mailto:ocenaranthony668@gmail.com" class="social-link animate-item" data-animate style="--item-index: 1;" title="Send Email">📧</a>
-                    <a href="tel:+639126291796" class="social-link animate-item" data-animate style="--item-index: 2;" title="Call Me">📞</a>
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 3;">💼</a>
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 4;">📱</a>
-                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 5;">💻</a>
+                    <a href="mailto:ocenaranthony668@gmail.com" class="social-link animate-item" data-animate style="--item-index: 1;" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+639126291796" class="social-link animate-item" data-animate style="--item-index: 2;" title="Call"><i class="fas fa-phone-alt"></i></a>
+                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 3;" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 4;" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link animate-item" data-animate style="--item-index: 5;" title="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         (function() {
@@ -1062,11 +1023,11 @@
                 if (theme === 'dark') {
                     body.classList.add('dark-mode');
                     body.classList.remove('light-mode');
-                    toggle.textContent = '☀️';
+                    toggle.innerHTML = '<i class="fas fa-sun"></i>';
                 } else {
                     body.classList.remove('dark-mode');
                     body.classList.add('light-mode');
-                    toggle.textContent = '🌙';
+                    toggle.innerHTML = '<i class="fas fa-moon"></i>';
                 }
                 localStorage.setItem('theme', theme);
             }
@@ -1107,33 +1068,17 @@
             });
             window.dispatchEvent(new Event('scroll'));
 
-            // Intersection Observer for scroll animations
             const animateItems = document.querySelectorAll('[data-animate]');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animated');
-                        entry.target.classList.remove('reversing');
-                    } else {
-                        if (entry.target.classList.contains('animated')) {
-                            entry.target.classList.add('reversing');
-                            setTimeout(() => {
-                                if (!entry.isIntersecting) entry.target.classList.remove('animated', 'reversing');
-                            }, 800);
-                        }
                     }
                 });
             }, { threshold: 0.15 });
             animateItems.forEach(item => observer.observe(item));
-            setTimeout(() => {
-                animateItems.forEach(item => {
-                    const rect = item.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100 && rect.bottom > 100) item.classList.add('animated');
-                });
-            }, 100);
         })();
 
-        // Modal image viewer
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeBtn = document.getElementById('modalClose');
@@ -1145,14 +1090,12 @@
         modal.onclick = (event) => { if (event.target === modal) modal.classList.remove('show'); }
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('show')) modal.classList.remove('show'); });
 
-        // Copy to clipboard functionality for contact cards
         window.copyToClipboard = function(text, type) {
             navigator.clipboard.writeText(text).then(() => {
-                // Provide temporary visual feedback
                 const activeElement = window.event.currentTarget;
                 const feedback = activeElement.querySelector('.copy-feedback');
                 const originalText = feedback.innerText;
-                feedback.innerText = `✓ ${type} copied!`;
+                feedback.innerText = `Copied ${type}!`;
                 feedback.style.opacity = '1';
                 setTimeout(() => {
                     feedback.innerText = originalText;
